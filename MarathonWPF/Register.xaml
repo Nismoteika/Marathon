@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MarathonWPF"
         mc:Ignorable="d"
-        Title="Register" Height="450" Width="800">
+        Title="Register" Height="550" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />
@@ -19,8 +19,30 @@
         </Grid>
 
         <Grid Grid.Row="1">
-            <Label HorizontalAlignment="Center" FontSize="24">Регистрация участника</Label>
-            <Label HorizontalAlignment="Center" FontSize="20">Пожалуйста заполните всю информацию, чтобы зарегестрироваться в качестве бегуна</Label>
+            <Label HorizontalAlignment="Center" FontSize="24" Margin="264,0,264,361">Регистрация участника</Label>
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" FontSize="20" Margin="94,53,81,295" Width="617">Пожалуйста заполните всю информацию, чтобы зарегестрироваться в качестве бегуна</TextBlock>
+            <Label Content="Email:" HorizontalAlignment="Left" Margin="198,131,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.183,0.201"/>
+            <Label Content="Пароль:" HorizontalAlignment="Left" Margin="185,162,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.183,0.201"/>
+            <Label Content="Повторите пароль:" HorizontalAlignment="Left" Margin="125,193,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.183,0.201"/>
+            <Label Content="Имя:" HorizontalAlignment="Left" Margin="203,224,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.183,0.201"/>
+            <Label Content="Фамилия:" HorizontalAlignment="Left" Margin="177,255,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.183,0.201"/>
+            <Label Content="Пол:" HorizontalAlignment="Left" Margin="204,286,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.183,0.201"/>
+            <Label Content="Фото файл:" HorizontalAlignment="Left" Margin="521,224,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.183,0.201"/>
+            <Label Content="Дата рождения:" HorizontalAlignment="Left" Margin="521,284,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.183,0.201"/>
+            <Label Content="Страна:" HorizontalAlignment="Left" Margin="567,314,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.183,0.201"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="264,134,0,0" TextWrapping="Wrap" Text="Email" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="264,166,0,0" TextWrapping="Wrap" Text="Пароль" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="264,197,0,0" TextWrapping="Wrap" Text="Повторите пароль" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="264,227,0,0" TextWrapping="Wrap" Text="Имя" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="264,259,0,0" TextWrapping="Wrap" Text="Фамилия" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="264,290,0,0" TextWrapping="Wrap" Text="Пол" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="521,255,0,0" TextWrapping="Wrap" Text="путь до фотографии" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalAlignment="Top" Width="120"/>
+            <DatePicker HorizontalAlignment="Left" Margin="635,285,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="635,318,0,0" TextWrapping="Wrap" Text="Страна" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalAlignment="Top" Width="120"/>
+            <Button Content="Просмотр" HorizontalAlignment="Left" Margin="660,255,0,0" VerticalAlignment="Top" Width="95" Template="{DynamicResource ButtonM}" Height="23"/>
+            <Image HorizontalAlignment="Left" Height="100" Margin="660,131,0,0" VerticalAlignment="Top" Width="95" OpacityMask="Gray"/>
+            <Button Content="Регистрация" HorizontalAlignment="Left" Margin="287,362,0,0" VerticalAlignment="Top" Width="95" Template="{DynamicResource ResourceKey=ButtonM}" Height="23"/>
+            <Button Content="Отмена" Click="HandleBtnBack_Click" HorizontalAlignment="Left" Margin="399,362,0,0" VerticalAlignment="Top" Width="95" Template="{DynamicResource ResourceKey=ButtonM}" Height="23"/>
         </Grid>
 
         <Grid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2">

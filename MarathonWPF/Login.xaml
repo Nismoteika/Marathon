@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="792" Background="Gray">
-            <Button Name="handleBtnBack" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Height="40" FontSize="20" Template="{DynamicResource ButtonM}" Margin="20,10,0,0" Click="HandleBtnBack_Click"/>
+            <Button Name="handleBtnBack" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Height="40" FontSize="20" Template="{DynamicResource ButtonM}" Margin="20,10,0,0" Click="HandleBtnBack_Click" />
             <Label Content="MARATHON SKILLS 2019" HorizontalAlignment="Center" Height="40" FontSize="20" Margin="136,10,406,10" Foreground="White" FontWeight="Bold" Width="250" VerticalAlignment="Center"/>
         </Grid>
 
