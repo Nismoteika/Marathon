@@ -58,14 +58,29 @@
     <Compile Include="DetailedInfo.xaml.cs">
       <DependentUpon>DetailedInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EditProfile.xaml.cs">
+      <DependentUpon>EditProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HowLongM.xaml.cs">
+      <DependentUpon>HowLongM.xaml</DependentUpon>
+    </Compile>
     <Compile Include="InteractiveMap.xaml.cs">
       <DependentUpon>InteractiveMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListFonds.xaml.cs">
+      <DependentUpon>ListFonds.xaml</DependentUpon>
     </Compile>
     <Compile Include="MarathonInfo.xaml.cs">
       <DependentUpon>MarathonInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MenuCoordinator.xaml.cs">
+      <DependentUpon>MenuCoordinator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MenuRunner.xaml.cs">
       <DependentUpon>MenuRunner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RecentRunResults.xaml.cs">
+      <DependentUpon>RecentRunResults.xaml</DependentUpon>
     </Compile>
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
@@ -90,7 +105,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="EditProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HowLongM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="InteractiveMap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListFonds.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -120,7 +147,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MenuCoordinator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MenuRunner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecentRunResults.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

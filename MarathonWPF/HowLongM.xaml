@@ -1,0 +1,34 @@
+﻿<Window x:Class="MarathonWPF.HowLongM"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MarathonWPF"
+        mc:Ignorable="d"
+        Title="HowLongM" Height="600" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="792" Background="Gray">
+            <Button Name="handleBtnBack" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Height="40" FontSize="20" Template="{DynamicResource ButtonM}" Margin="20,10,0,0" Click="HandleBtnBack_Click" />
+            <Label Content="MARATHON SKILLS 2019" HorizontalAlignment="Center" Height="40" FontSize="20" Margin="136,10,406,10" Foreground="White" FontWeight="Bold" Width="250" VerticalAlignment="Center"/>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Label Content="Насколько долгий марафон?" HorizontalAlignment="Left" Margin="215,30,0,0" VerticalAlignment="Top" FontSize="24"/>
+            <Label Content="Имя выбранного пункта" HorizontalAlignment="Left" Margin="70,77,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="24"/>
+            <Image Height="150" Margin="110,144,481,165" OpacityMask="#FF878787"/>
+            <Menu HorizontalAlignment="Left" Height="288" Margin="542,106,0,0" VerticalAlignment="Top" Width="183"/>
+
+        </Grid>
+
+        <Grid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2">
+            <Rectangle Fill="Gray" Height="100"/>
+            <Label Name="ReverseTimer" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+        </Grid>
+    </Grid>
+</Window>
