@@ -24,7 +24,7 @@ namespace MarathonWPF
         private void SponsorRunner_Loaded(object sender, RoutedEventArgs e)
         {
             RevTimer revTimer = new RevTimer(ReverseTimer);
-
+            //
             runnerName.ItemsSource = new g463_runnersDataSetTableAdapters.User1TableAdapter().GetData();
             runnerName.DisplayMemberPath = "FN";
             runnerName.SelectedValuePath = "RunnerId";
