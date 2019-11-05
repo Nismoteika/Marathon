@@ -15,17 +15,30 @@ using System.Windows.Shapes;
 namespace MarathonWPF
 {
     /// <summary>
-    /// Логика взаимодействия для InteractiveMap.xaml
+    /// Interaction logic for auth.xaml
     /// </summary>
-    public partial class InteractiveMap : Window
+    public partial class EarlyOrNow : Window
     {
-        public InteractiveMap()
+        public EarlyOrNow()
         {
             InitializeComponent();
         }
 
         private void HandleBtnBack_Click(object sender, RoutedEventArgs e)
         {
+            new MainWindow().Show();
+            Close();
+        }
+
+        private void HandleBtnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            new Login().Show();
+            Close();
+        }
+
+        private void HandleBtnRegister_Click(object sender, RoutedEventArgs e)
+        {
+            new Register().Show();
             Close();
         }
     }

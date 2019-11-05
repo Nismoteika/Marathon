@@ -1,16 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace MarathonWPF
 {
@@ -22,6 +11,31 @@ namespace MarathonWPF
         public RecentRunResults()
         {
             InitializeComponent();
+
+            this.Loaded += RecentRunResults_Loaded;
+        }
+
+        private void RecentRunResults_Loaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                genderCombo.ItemsSource = new g463_runnersDataSetTableAdapters.GenderTableAdapter().GetData();
+                genderCombo.DisplayMemberPath = "Gender";
+                genderCombo.SelectedValuePath = "Gender";
+
+                marathonCombo.ItemsSource = new g463_runnersDataSetTableAdapters.Marathon1TableAdapter().GetData();
+                marathonCombo.DisplayMemberPath = "YC";
+                marathonCombo.SelectedValuePath = "MarathonId";
+
+                //distanceCombo.ItemsSource
+
+            } catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void HandleBtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            new DetailedInfo().Show();
+            Close();
         }
     }
 }

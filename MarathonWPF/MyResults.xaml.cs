@@ -15,13 +15,18 @@ using System.Windows.Shapes;
 namespace MarathonWPF
 {
     /// <summary>
-    /// Логика взаимодействия для ThanksSponsorSupport.xaml
+    /// Interaction logic for MyResults.xaml
     /// </summary>
-    public partial class ThanksSponsorSupport : Window
+    public partial class MyResults : Window
     {
-        public ThanksSponsorSupport()
+        public MyResults()
         {
             InitializeComponent();
+        }
+
+        private void HandleBtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

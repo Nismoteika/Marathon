@@ -23,5 +23,10 @@ namespace MarathonWPF
         {
             InitializeComponent();
         }
+
+        private void HandleBtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

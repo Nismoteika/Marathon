@@ -15,32 +15,27 @@ using System.Windows.Shapes;
 namespace MarathonWPF
 {
     /// <summary>
-    /// Interaction logic for auth.xaml
+    /// Interaction logic for MenuAdmin.xaml
     /// </summary>
-    public partial class AuthWindow : Window
+    public partial class MenuAdmin : Window
     {
-        public AuthWindow()
+        public MenuAdmin()
         {
             InitializeComponent();
         }
 
         private void HandleBtnBack_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            new MainWindow().Show();
+            Close();
         }
 
-        private void HandleBtnLogin_Click(object sender, RoutedEventArgs e)
+        private void HandleBtnLogout_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-            new Login().ShowDialog();
-            this.Show();
-        }
-
-        private void HandleBtnRegister_Click(object sender, RoutedEventArgs e)
-        {
-            this.Hide();
-            new Register().ShowDialog();
-            this.Show();
+            UserData.userEmail = "";
+            UserData.userRole = "";
+            new EarlyOrNow().Show();
+            Close();
         }
     }
 }

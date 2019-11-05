@@ -16,18 +16,22 @@
         <Grid Grid.Row="0" VerticalAlignment="Top" Background="Gray">
             <Button Name="handleBtnBack" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Height="40" FontSize="20" Template="{DynamicResource ButtonM}" Margin="20,10,0,0" Click="HandleBtnBack_Click"/>
             <Label Content="MARATHON SKILLS 2019" HorizontalAlignment="Center" Height="40" FontSize="20" Margin="136,10,406,10" Foreground="White" FontWeight="Bold" Width="250" VerticalAlignment="Center"/>
+            <Button Name="handleBtnLogout" Content="Logout" HorizontalAlignment="Right" VerticalAlignment="Top" Width="105" Height="40" FontSize="20" Template="{DynamicResource ButtonM}" Margin="0,10,21,0" />
         </Grid>
 
         <Grid Grid.Row="1">
-            <TextBlock HorizontalAlignment="Center" TextAlignment="Center" FontSize="24" Margin="158,25,158,386" Width="476">Результаты предыдущих гонок</TextBlock>
+            <TextBlock HorizontalAlignment="Center" TextAlignment="Center" FontSize="24" Margin="158,25,158,386" Width="340">Результаты предыдущих гонок</TextBlock>
             <Label Content="Марафон:" HorizontalAlignment="Left" Margin="158,78,0,0" VerticalAlignment="Top" />
             <Label Content="Дистанция:" HorizontalAlignment="Left" Margin="151,109,0,0" VerticalAlignment="Top" />
             <Label Content="Пол:" HorizontalAlignment="Left" Margin="448,78,0,0" VerticalAlignment="Top" />
             <Label Content="Категория:" HorizontalAlignment="Left" Margin="414,109,0,0" VerticalAlignment="Top" />
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="228,78,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="228,112,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="488,78,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="488,112,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <ComboBox Name="marathonCombo" HorizontalAlignment="Left" Height="23" Margin="228,78,0,0" VerticalAlignment="Top" Width="120"/>
+            <ComboBox Name="distanceCombo" HorizontalAlignment="Left" Height="23" Margin="228,112,0,0" VerticalAlignment="Top" Width="120"/>
+            <ComboBox Name="genderCombo" HorizontalAlignment="Left" Height="23" Margin="488,78,0,0" VerticalAlignment="Top" Width="120"/>
+            <ComboBox Name="categoryCombo" HorizontalAlignment="Left" Height="23" Margin="488,112,0,0" VerticalAlignment="Top" Width="120">
+                <ListBoxItem Content="18-29 лет"/>
+                <ListBoxItem Content="30-50"/>
+            </ComboBox>
             <Button Content="Поиск" HorizontalAlignment="Left" Margin="629,112,0,0" VerticalAlignment="Top" Width="75" Template="{DynamicResource ResourceKey=ButtonM}" Height="23"/>
             <Label Content="Всего бегунов: " HorizontalAlignment="Left" Margin="45,155,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="Gray" FontSize="14"/>
             <Label Content="Всего бегунов финишировало: " HorizontalAlignment="Left" Margin="212,155,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="Gray" FontSize="14"/>

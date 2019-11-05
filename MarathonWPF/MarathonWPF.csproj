@@ -37,6 +37,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -46,21 +48,36 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DetailedInfo.xaml.cs">
-      <DependentUpon>DetailedInfo.xaml</DependentUpon>
+    <Compile Include="Data.cs" />
+    <Compile Include="Menus\MenuDetails.xaml.cs">
+      <DependentUpon>MenuDetails.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EditProfile.xaml.cs">
+    <Compile Include="ProfileControl\EditProfile.xaml.cs">
       <DependentUpon>EditProfile.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Fond.xaml.cs">
+      <DependentUpon>Fond.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="g463_runnersDataSet.cs">
+      <DependentUpon>g463_runnersDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="g463_runnersDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>g463_runnersDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HandleCommonForm.cs" />
     <Compile Include="HowLongM.xaml.cs">
       <DependentUpon>HowLongM.xaml</DependentUpon>
     </Compile>
@@ -73,39 +90,53 @@
     <Compile Include="MarathonInfo.xaml.cs">
       <DependentUpon>MarathonInfo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MenuCoordinator.xaml.cs">
+    <Compile Include="Menus\MenuAdmin.xaml.cs">
+      <DependentUpon>MenuAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\MenuCoordinator.xaml.cs">
       <DependentUpon>MenuCoordinator.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MenuRunner.xaml.cs">
+    <Compile Include="Menus\MenuRunner.xaml.cs">
       <DependentUpon>MenuRunner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyResults.xaml.cs">
+      <DependentUpon>MyResults.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MySponsors.xaml.cs">
+      <DependentUpon>MySponsors.xaml</DependentUpon>
     </Compile>
     <Compile Include="RecentRunResults.xaml.cs">
       <DependentUpon>RecentRunResults.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Register.xaml.cs">
+    <Compile Include="ProfileControl\Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
     <Compile Include="RegisterOnMarathon.xaml.cs">
       <DependentUpon>RegisterOnMarathon.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RevTimer.cs" />
     <Compile Include="SponsorRunner.xaml.cs">
       <DependentUpon>SponsorRunner.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ThanksForRegistrationRunner.xaml.cs">
+    <Compile Include="Thanks\ThanksForRegistrationRunner.xaml.cs">
       <DependentUpon>ThanksForRegistrationRunner.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ThanksSponsorSupport.xaml.cs">
+    <Compile Include="Thanks\ThanksSponsorSupport.xaml.cs">
       <DependentUpon>ThanksSponsorSupport.xaml</DependentUpon>
     </Compile>
-    <Page Include="AuthWindow.xaml">
+    <Page Include="ProfileControl\AuthWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DetailedInfo.xaml">
+    <Page Include="Menus\MenuDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EditProfile.xaml">
+    <Page Include="ProfileControl\EditProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Fond.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -121,7 +152,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Login.xaml">
+    <Page Include="ProfileControl\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -133,10 +164,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AuthWindow.xaml.cs">
+    <Compile Include="ProfileControl\AuthWindow.xaml.cs">
       <DependentUpon>AuthWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Login.xaml.cs">
+    <Compile Include="ProfileControl\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
@@ -147,11 +178,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MenuCoordinator.xaml">
+    <Page Include="Menus\MenuAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MenuRunner.xaml">
+    <Page Include="Menus\MenuCoordinator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menus\MenuRunner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyResults.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MySponsors.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -159,7 +202,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Register.xaml">
+    <Page Include="ProfileControl\Register.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -175,11 +218,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ThanksForRegistrationRunner.xaml">
+    <Page Include="Thanks\ThanksForRegistrationRunner.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ThanksSponsorSupport.xaml">
+    <Page Include="Thanks\ThanksSponsorSupport.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -202,6 +245,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="g463_runnersDataSet.xsc">
+      <DependentUpon>g463_runnersDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="g463_runnersDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>g463_runnersDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="g463_runnersDataSet.xss">
+      <DependentUpon>g463_runnersDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

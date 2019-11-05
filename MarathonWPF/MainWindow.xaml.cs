@@ -16,31 +16,36 @@ namespace MarathonWPF
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            DispatcherTimer timer1 = new DispatcherTimer();
-            timer1.Tick += new EventHandler(TimerTick);
-            timer1.Interval = new TimeSpan(0, 1, 0);
-            timer1.Start();
-            updateDate();
-        }
-
-        private void updateDate()
-        {
-            DateTime dateNow = DateTime.Now;
-            DateTime dateM = new DateTime(2019, 10, 21);
-            TimeSpan revDate = dateM.Subtract(dateNow);
-            ReverseTimer.Content = revDate.Days + " дней " + revDate.Hours + " часов и " + revDate.Minutes + " минут до старта марафона!";
-        }
-
-        private void TimerTick(object sender, EventArgs e)
-        {
-            updateDate();
+            RevTimer revTimer = new RevTimer(ReverseTimer);
         }
 
         private void HandleBtnAuthWindowOpen_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-            new AuthWindow().ShowDialog();
-            this.Show();
+            new Login().Show();
+            Close();
+        }
+
+        private void handleNewSponsorBtn_Click(object sender, RoutedEventArgs e)
+        {
+            new SponsorRunner().Show();
+            Close();
+        }
+
+        private void MenuDetailInfo_Click(object sender, RoutedEventArgs e)
+        {
+            new DetailedInfo().Show();
+            Close();
+        }
+
+        private void NewViewer_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void NewRunner_Click(object sender, RoutedEventArgs e)
+        {
+            new EarlyOrNow().Show();
+            Close();
         }
     }
 }

@@ -15,13 +15,18 @@ using System.Windows.Shapes;
 namespace MarathonWPF
 {
     /// <summary>
-    /// Interaction logic for EditProfile.xaml
+    /// Interaction logic for MySponsors.xaml
     /// </summary>
-    public partial class EditProfile : Window
+    public partial class MySponsors : Window
     {
-        public EditProfile()
+        public MySponsors()
         {
             InitializeComponent();
+        }
+
+        private void HandleBtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -22,6 +22,26 @@ namespace MarathonWPF
         public DetailedInfo()
         {
             InitializeComponent();
+
+            this.Loaded += DetailedInfo_Loaded;
+        }
+
+        private void DetailedInfo_Loaded(object sender, RoutedEventArgs e)
+        {
+            new HandleBack(this, handleBtnBack);
+        }
+
+        private void ListFondsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            new ListFonds().Show();
+            Close();
+
+        }
+
+        private void TableRecentRuns_Click(object sender, RoutedEventArgs e)
+        {
+            new RecentRunResults().Show();
+            Close();
         }
     }
 }

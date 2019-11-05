@@ -21,9 +21,9 @@
         <Grid Grid.Row="1">
             <TextBlock HorizontalAlignment="Center" Height="40" FontSize="24" Margin="138,29,138,390" Width="516" TextAlignment="Center">Спасибо за вашу спонсорскую поддержку</TextBlock>
             <TextBlock HorizontalAlignment="Center" Height="70" TextWrapping="Wrap" TextAlignment="Center" FontSize="20" Margin="85,74,77,315" Width="630">Пожалуйста, авторизируйтесь в системе, используя ваш адрес электронной почты и пароль</TextBlock>
-            <Label Content="Иван Прудов(204) из России" HorizontalAlignment="Left" Margin="237,149,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="24"/>
+            <Label Name="labelRunner" Content="Иван Прудов(204) из России" HorizontalAlignment="Left" Margin="237,149,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="24"/>
             <Label Content="Фонд кошек" HorizontalAlignment="Left" Margin="315,212,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="LightGray" FontSize="28"/>
-            <Label Content="$50" HorizontalAlignment="Left" Margin="368,264,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="40"/>
+            <Label Name="labelMuchDollars" Content="$50" HorizontalAlignment="Left" Margin="368,264,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="40"/>
             <Button Content="Назад" Click="HandleBtnBack_Click" HorizontalAlignment="Left" Margin="353,361,0,0" VerticalAlignment="Top" FontSize="20" Width="105" Template="{DynamicResource ButtonM}" Height="38"/>
         </Grid>
 

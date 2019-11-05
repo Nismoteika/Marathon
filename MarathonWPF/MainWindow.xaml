@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MarathonWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800" Loaded="Window_Loaded" SizeToContent="WidthAndHeight">
+        Title="MainWindow" Height="650" Width="800" Loaded="Window_Loaded" SizeToContent="WidthAndHeight">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="200"/>
@@ -26,10 +26,10 @@
             <Label Content="среда 21 октября 2016" HorizontalAlignment="Center" Height="40" HorizontalContentAlignment="Center" FontSize="20" Margin="268,80,274,10" Foreground="White" FontStyle="Italic" Width="250" VerticalAlignment="Center"/>
         </Grid>
 
-        <Button Grid.Column="0" Grid.Row="1" Content="Я хочу стать бегуном" HorizontalAlignment="Center" VerticalAlignment="Center" Width="370" Height="92" FontSize="24" Template="{DynamicResource ButtonM}"/>
-        <Button Grid.Column="1" Grid.Row="1" Content="Я хочу стать зрителем" HorizontalAlignment="Center" VerticalAlignment="Center" Width="370" Height="92" FontSize="24" Template="{DynamicResource ButtonM}"/>
-        <Button Grid.Column="0" Grid.Row="2" Content="Я хочу стать спонсором бегуна" HorizontalAlignment="Center" VerticalAlignment="Center" Width="370" Height="92" FontSize="24" Template="{DynamicResource ButtonM}"/>
-        <Button Grid.Column="1" Grid.Row="2" Content="Я хочу узнать больше о событии" HorizontalAlignment="Center" VerticalAlignment="Center" Width="370" Height="92" FontSize="24" Template="{DynamicResource ButtonM}"/>
+        <Button Name="newRunner" Grid.Column="0" Grid.Row="1" Content="Я хочу стать бегуном" HorizontalAlignment="Center" VerticalAlignment="Center" Width="370" Height="92" FontSize="24" Template="{DynamicResource ButtonM}" Click="NewRunner_Click"/>
+        <Button Name="newViewer" Grid.Column="1" Grid.Row="1" Content="Я хочу стать зрителем" HorizontalAlignment="Center" VerticalAlignment="Center" Width="370" Height="92" FontSize="24" Template="{DynamicResource ButtonM}" Click="NewViewer_Click"/>
+        <Button Name="newSponsorBtn" Grid.Column="0" Grid.Row="2" Content="Я хочу стать спонсором бегуна" HorizontalAlignment="Center" VerticalAlignment="Center" Width="370" Height="92" FontSize="24" Template="{DynamicResource ButtonM}" Click="handleNewSponsorBtn_Click"/>
+        <Button Name="menuDetailInfo" Grid.Column="1" Grid.Row="2" Content="Я хочу узнать больше о событии" HorizontalAlignment="Center" VerticalAlignment="Center" Width="370" Height="92" FontSize="24" Template="{DynamicResource ButtonM}" Click="MenuDetailInfo_Click"/>
 
         <Button Grid.Column="1" Grid.Row="3" Name="handleBtnAuthWindowOpen" Content="Авторизация" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="130" Height="40" FontSize="18" Template="{DynamicResource ButtonM}" Click="HandleBtnAuthWindowOpen_Click" Margin="0,0,18,10" />
         <Grid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4">

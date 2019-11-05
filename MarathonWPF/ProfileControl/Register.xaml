@@ -30,19 +30,19 @@
             <Label Content="Фото файл:" HorizontalAlignment="Left" Margin="521,224,0,0" VerticalAlignment="Top" />
             <Label Content="Дата рождения:" HorizontalAlignment="Left" Margin="521,284,0,0" VerticalAlignment="Top" />
             <Label Content="Страна:" HorizontalAlignment="Left" Margin="567,314,0,0" VerticalAlignment="Top" />
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="264,134,0,0" TextWrapping="Wrap" Text="Email" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalAlignment="Top" Width="120"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="264,166,0,0" TextWrapping="Wrap" Text="Пароль" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalAlignment="Top" Width="120"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="264,197,0,0" TextWrapping="Wrap" Text="Повторите пароль" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalAlignment="Top" Width="120"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="264,227,0,0" TextWrapping="Wrap" Text="Имя" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalAlignment="Top" Width="120"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="264,259,0,0" TextWrapping="Wrap" Text="Фамилия" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalAlignment="Top" Width="120"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="264,290,0,0" TextWrapping="Wrap" Text="Пол" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalAlignment="Top" Width="120"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="521,255,0,0" TextWrapping="Wrap" Text="путь до фотографии" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalAlignment="Top" Width="120"/>
-            <DatePicker HorizontalAlignment="Left" Margin="635,285,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="635,318,0,0" TextWrapping="Wrap" Text="Страна" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalAlignment="Top" Width="120"/>
-            <Button Content="Просмотр" HorizontalAlignment="Left" Margin="660,255,0,0" VerticalAlignment="Top" Width="95" Template="{DynamicResource ButtonM}" Height="23"/>
+            <TextBox Name="emailInp" HorizontalAlignment="Left" Height="23" Margin="264,134,0,0" TextWrapping="Wrap" Text="Email" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalAlignment="Top" Width="120"/>
+            <PasswordBox Name="passInp" HorizontalAlignment="Left" Height="23" Margin="264,166,0,0" VerticalAlignment="Top" Width="120"/>
+            <PasswordBox Name="passRInp" HorizontalAlignment="Left" Height="23" Margin="264,197,0,0" VerticalAlignment="Top" Width="120" PasswordChanged="PassRInp_PasswordChanged"/> 
+            <TextBox Name="firstNameInp" HorizontalAlignment="Left" Height="23" Margin="264,227,0,0" TextWrapping="Wrap" Text="Имя" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalAlignment="Top" Width="120"/>
+            <TextBox Name="lastNameInp" HorizontalAlignment="Left" Height="23" Margin="264,259,0,0" TextWrapping="Wrap" Text="Фамилия" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalAlignment="Top" Width="120"/>
+            <TextBox Name="genderInp" HorizontalAlignment="Left" Height="23" Margin="264,290,0,0" TextWrapping="Wrap" Text="Пол" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalAlignment="Top" Width="120"/>
+            <TextBox Name="pathToImgInp" HorizontalAlignment="Left" Height="23" Margin="521,255,0,0" TextWrapping="Wrap" Text="путь до фотографии" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalAlignment="Top" Width="120"/>
+            <DatePicker Name="dateInp" HorizontalAlignment="Left" Margin="635,285,0,0" VerticalAlignment="Top"/>
+            <TextBox Name="countryInp" HorizontalAlignment="Left" Height="23" Margin="635,318,0,0" TextWrapping="Wrap" Text="Страна" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalAlignment="Top" Width="120"/>
+            <Button Name="viewImg" Content="Просмотр" HorizontalAlignment="Left" Margin="660,255,0,0" VerticalAlignment="Top" Width="95" Template="{DynamicResource ButtonM}" Height="23" Click="ViewImg_Click"/>
             <Image HorizontalAlignment="Left" Height="100" Margin="660,131,0,0" VerticalAlignment="Top" Width="95" OpacityMask="Gray"/>
-            <Button Content="Регистрация" HorizontalAlignment="Left" Margin="287,362,0,0" VerticalAlignment="Top" Width="95" Template="{DynamicResource ResourceKey=ButtonM}" Height="23"/>
-            <Button Content="Отмена" Click="HandleBtnBack_Click" HorizontalAlignment="Left" Margin="399,362,0,0" VerticalAlignment="Top" Width="95" Template="{DynamicResource ResourceKey=ButtonM}" Height="23"/>
+            <Button Name="registerBtn" Content="Регистрация" HorizontalAlignment="Left" Margin="287,362,0,0" VerticalAlignment="Top" Width="95" Template="{DynamicResource ResourceKey=ButtonM}" Height="23" Click="RegisterBtn_Click"/>
+            <Button Name="cancelBtn" Content="Отмена" HorizontalAlignment="Left" Margin="399,362,0,0" VerticalAlignment="Top" Width="95" Template="{DynamicResource ResourceKey=ButtonM}" Height="23" Click="HandleBtnBack_Click"/>
         </Grid>
 
         <Grid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2">

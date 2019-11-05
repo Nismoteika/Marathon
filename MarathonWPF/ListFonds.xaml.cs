@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace MarathonWPF
 {
@@ -22,6 +10,27 @@ namespace MarathonWPF
         public ListFonds()
         {
             InitializeComponent();
+
+            this.Loaded += ListFonds_Loaded;
         }
+
+        private void ListFonds_Loaded(object sender, RoutedEventArgs e)
+        {
+            g463_runnersDataSet.CharityDataTable data = new g463_runnersDataSetTableAdapters.CharityTableAdapter().GetData();
+            for(int i = 0; i < data.Count; i++)
+            {
+                g463_runnersDataSet.CharityRow element = data[i];
+                Fond fond = new Fond(element.CharityName, element.CharityDescription, element.CharityLogo);
+                stackFonds.Children.Add(fond);
+            }
+        }
+
+        private void HandleBtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+            new MainWindow().Show();
+        }
+
+
     }
 }

@@ -29,21 +29,37 @@
             <Label Content="Номер карты:" HorizontalAlignment="Left" Margin="55,310,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="18"/>
             <Label Content="Срок действия:" HorizontalAlignment="Left" Margin="44,349,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="18"/>
             <Label Content="CVC:" HorizontalAlignment="Left" Margin="132,383,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="18"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="197,203,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="197,281,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="197,320,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="197,359,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="39"/>
-            <ComboBox HorizontalAlignment="Left" Margin="197,244,0,0" VerticalAlignment="Top" Width="120"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="241,359,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="49"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="197,393,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="61"/>
+            <TextBox Name="sponsorName" HorizontalAlignment="Left" Height="23" Margin="197,203,0,0" TextWrapping="Wrap" Text="Имя спонсора" VerticalAlignment="Top" Width="130" TextChanged="SponsorName_TextChanged" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+            <TextBox Name="nameCart" HorizontalAlignment="Left" Height="23" Margin="197,281,0,0" Text="Владелец карты" VerticalAlignment="Top" Width="130" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" TextChanged="NameCart_TextChanged"/>
+            <TextBox Name="numCart" HorizontalAlignment="Left" Height="23" Margin="197,320,0,0" Text="Номер карты" VerticalAlignment="Top" Width="130" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" TextChanged="NumCart_TextChanged" Template="{DynamicResource TextBoxControlTemplate1}">
+                <TextBox.Resources>
+                    <ControlTemplate x:Key="TextBoxControlTemplate1" TargetType="{x:Type TextBox}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF569DE5"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </TextBox.Resources>
+            </TextBox>
+            <TextBox Name="monthCart" HorizontalAlignment="Left" Height="23" Margin="197,359,0,0" Text="Месяц" VerticalAlignment="Top" Width="50" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+            <ComboBox Name="runnerName" HorizontalAlignment="Left" Margin="197,244,0,0" VerticalAlignment="Top" Width="130"/>
+            <TextBox Name="yearCart" HorizontalAlignment="Left" Height="23" Margin="254,359,0,0" Text="Год" VerticalAlignment="Top" Width="49" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+            <PasswordBox Name="cvcCart" HorizontalAlignment="Left" Height="23" Margin="197,393,0,0" VerticalAlignment="Top" Width="61"/>
             <Label Content="Фонд кошек" HorizontalAlignment="Left" Margin="544,179,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="18"/>
             <Label Content="Сумма пожертвования" HorizontalAlignment="Left" Margin="473,244,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="LightGray" FontSize="22"/>
-            <Label Content="$50" HorizontalAlignment="Left" Margin="564,288,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="40"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="560,363,0,0" TextWrapping="Wrap" TextAlignment="Center" Text="TextBox" VerticalAlignment="Top" Width="95"/>
-            <Button Content="-" HorizontalAlignment="Left" Margin="522,364,0,0" VerticalAlignment="Top" Width="33" FontSize="16" Template="{DynamicResource ButtonM}" Height="22"/>
-            <Button Content="+" HorizontalAlignment="Left" Margin="660,363,0,0" VerticalAlignment="Top" Width="33" FontSize="16" Template="{DynamicResource ButtonM}" Height="22"/>
-            <Button Content="Заплатить" HorizontalAlignment="Left" Margin="506,400,0,0" VerticalAlignment="Top" Width="95" Template="{DynamicResource ResourceKey=ButtonM}" Height="23"/>
-            <Button Content="Отмена" Click="HandleBtnBack_Click" HorizontalAlignment="Left" Margin="619,400,0,0" VerticalAlignment="Top" Width="95" Template="{DynamicResource ResourceKey=ButtonM}" Height="23"/>
+            <Label Name="labelMuchDollars" Content="$50" HorizontalAlignment="Left" Margin="564,288,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="40"/>
+            <TextBox Name="textMuchDollars" HorizontalAlignment="Left" Height="23" Margin="560,363,0,0" TextWrapping="Wrap" TextAlignment="Center" Text="50" VerticalAlignment="Top" Width="95" TextChanged="TextMuchDollars_TextChanged" />
+            <Button Name="decreseDollars" Content="-" HorizontalAlignment="Left" Margin="522,364,0,0" VerticalAlignment="Top" Width="33" FontSize="16" Template="{DynamicResource ButtonM}" Height="22" Click="DecreseDollars_Click"/>
+            <Button Name="increseDollars" Content="+" HorizontalAlignment="Left" Margin="660,363,0,0" VerticalAlignment="Top" Width="33" FontSize="16" Template="{DynamicResource ButtonM}" Height="22" Click="IncreseDollars_Click"/>
+            <Button Name="payToRunner" Content="Заплатить" HorizontalAlignment="Left" Margin="506,400,0,0" VerticalAlignment="Top" Width="95" Template="{DynamicResource ResourceKey=ButtonM}" Height="23" Click="PayToRunner_Click"/>
+            <Button Name="cancel" Content="Отмена" Click="HandleBtnBack_Click" HorizontalAlignment="Left" Margin="619,400,0,0" VerticalAlignment="Top" Width="95" Template="{DynamicResource ResourceKey=ButtonM}" Height="23"/>
 
         </Grid>
 

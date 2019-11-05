@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace MarathonWPF
 {
@@ -19,6 +10,8 @@ namespace MarathonWPF
     /// </summary>
     public partial class Register : Window
     {
+        private bool passRight;
+
         public Register()
         {
             InitializeComponent();
@@ -26,6 +19,7 @@ namespace MarathonWPF
 
         private void HandleBtnBack_Click(object sender, RoutedEventArgs e)
         {
+            new MainWindow().Show();
             Close();
         }
 
@@ -51,6 +45,36 @@ namespace MarathonWPF
             {
                 t.Text = (string)t.Tag;
                 t.Foreground = new SolidColorBrush(Colors.Gray);
+            }
+        }
+
+        private void ViewImg_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RegisterBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string email = emailInp.Text;
+            string firstName = firstNameInp.Text;
+            string lastName = lastNameInp.Text;
+            string gender = genderInp.Text;
+            string pathImg = pathToImgInp.Text;
+            ImageSource ava = (ImageSource)new ImageSourceConverter().ConvertFrom(File.ReadAllBytes(pathImg));
+            string date = dateInp.SelectedDate.ToString();
+            string country = countryInp.Text;
+            string pass = passInp.Password;
+            if(passRight)
+            {
+                new g463_runnersDataSetTableAdapters.
+            }
+        }
+
+        private void PassRInp_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if(passInp.Password != passRInp.Password)
+            {
+                passRInp.BorderBrush = new SolidColorBrush(Colors.Red);
             }
         }
     }

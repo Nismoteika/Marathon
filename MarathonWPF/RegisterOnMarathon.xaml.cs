@@ -24,9 +24,9 @@ namespace MarathonWPF
             InitializeComponent();
         }
 
-        private void HandleBtnLogout_Click(object sender, RoutedEventArgs e)
+        private void HandleBtnBack_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
     }
 }

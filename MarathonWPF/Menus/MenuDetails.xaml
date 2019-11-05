@@ -14,17 +14,17 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="792" Background="Gray">
-            <Button Name="handleBtnBack" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Height="40" FontSize="20" Template="{DynamicResource ButtonM}" Margin="20,10,0,0" Click="HandleBtnBack_Click" />
+            <Button Name="handleBtnBack" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Height="40" FontSize="20" Template="{DynamicResource ButtonM}" Margin="20,10,0,0" />
             <Label Content="MARATHON SKILLS 2019" HorizontalAlignment="Center" Height="40" FontSize="20" Margin="136,10,406,10" Foreground="White" FontWeight="Bold" Width="250" VerticalAlignment="Center"/>
         </Grid>
 
         <Grid Grid.Row="1">
             <Label Content="Подробная информация" HorizontalAlignment="Left" Margin="248,24,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="24"/>
-            <Button Content="Marathon Skills 2017" HorizontalAlignment="Center" VerticalAlignment="Center" Width="370" Height="92" FontSize="24" Template="{DynamicResource ButtonM}" Margin="20,83,402,284"/>
-            <Button Content="Насколько долгий марафон" HorizontalAlignment="Center" VerticalAlignment="Center" Width="370" Height="92" FontSize="24" Template="{DynamicResource ButtonM}" Margin="396,83,26,284"/>
-            <Button Content="Предыдущие результаты" HorizontalAlignment="Center" VerticalAlignment="Center" Width="370" Height="92" FontSize="24" Template="{DynamicResource ButtonM}" Margin="20,194,402,173"/>
-            <Button Content="Список благотворительных организаций" HorizontalAlignment="Center" VerticalAlignment="Center" Width="370" Height="92" FontSize="24" Template="{DynamicResource ButtonM}" Margin="396,194,26,173"/>
-            <Button Content="BMI калькулятор" HorizontalAlignment="Center" VerticalAlignment="Center" Width="370" Height="92" FontSize="24" Template="{DynamicResource ButtonM}" Margin="20,308,402,59"/>
+            <Button Content="Marathon Skills 2017" HorizontalAlignment="Center" VerticalAlignment="Center" Width="360" Height="82" FontSize="24" Template="{DynamicResource ButtonM}" Margin="20,83,402,284"/>
+            <Button Content="Насколько долгий марафон" HorizontalAlignment="Center" VerticalAlignment="Center" Width="360" Height="82" FontSize="24" Template="{DynamicResource ButtonM}" Margin="396,83,26,284"/>
+            <Button Name="tableRecentRuns" Content="Предыдущие результаты" HorizontalAlignment="Center" VerticalAlignment="Center" Width="360" Height="82" FontSize="24" Template="{DynamicResource ButtonM}" Margin="20,194,402,173" Click="TableRecentRuns_Click"/>
+            <Button Name="listFondsBtn" Content="Список благотворительных организаций" HorizontalAlignment="Center" VerticalAlignment="Center" Width="360" Height="82" FontSize="18" Template="{DynamicResource ButtonM}" Margin="396,194,26,173" Click="ListFondsBtn_Click"/>
+            <Button Content="BMI калькулятор" HorizontalAlignment="Center" VerticalAlignment="Center" Width="360" Height="82" FontSize="24" Template="{DynamicResource ButtonM}" Margin="20,308,402,59"/>
         </Grid>
 
         <Grid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2">
