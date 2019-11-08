@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -60,13 +61,14 @@ namespace MarathonWPF
             string lastName = lastNameInp.Text;
             string gender = genderInp.Text;
             string pathImg = pathToImgInp.Text;
-            ImageSource ava = (ImageSource)new ImageSourceConverter().ConvertFrom(File.ReadAllBytes(pathImg));
-            string date = dateInp.SelectedDate.ToString();
+            byte[] ava = File.ReadAllBytes(pathImg);
+            DateTime? date = dateInp.SelectedDate;
             string country = countryInp.Text;
             string pass = passInp.Password;
-            if(passRight)
+            if(passRight && date != null)
             {
-                new g463_runnersDataSetTableAdapters.
+                new g463_runnersDataSetTableAdapters.UserTableAdapter().Insert(email, pass, firstName, lastName, "R");
+                new g463_runnersDataSetTableAdapters.RunnerTableAdapter().Insert(email, gender, date, country);
             }
         }
 
