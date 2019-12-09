@@ -22,11 +22,11 @@
             <TextBlock HorizontalAlignment="Center" Height="40" FontSize="24" Margin="280,16,280,253">Форма авторизации</TextBlock>
             <TextBlock HorizontalAlignment="Center" Height="70" TextWrapping="Wrap" TextAlignment="Center" FontSize="20" Margin="85,61,77,178" Width="630">Пожалуйста, авторизируйтесь в системе, используя ваш адрес электронной почты и пароль</TextBlock>
             <Label Content="Email:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="252,136,0,0" Height="23"/>
-            <TextBox Name="emailInp" HorizontalAlignment="Left" Height="23" Margin="319,136,0,0" TextWrapping="Wrap" Text="Enter your email address" VerticalAlignment="Top" Width="120" GotFocus="TextBox_GotFocus" Foreground="#6C6C6C" LostFocus="TextBox_LostFocus"/>
+            <TextBox Name="emailInp" HorizontalAlignment="Left" Height="23" Margin="319,136,0,0" TextWrapping="Wrap" Text="Enter your email address" VerticalAlignment="Top" Width="172" GotFocus="TextBox_GotFocus" Foreground="#6C6C6C" LostFocus="TextBox_LostFocus"/>
             <Label Content="Password:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="231,170,0,0" Height="23"/>
-            <PasswordBox Name="passInp" HorizontalAlignment="Left" Height="23" Margin="319,170,0,0" VerticalAlignment="Top" Width="120" />
-            <Button Name="loginBtn" Content="Login" HorizontalAlignment="Left" Margin="267,215,0,0" VerticalAlignment="Top" Width="75" Template="{DynamicResource ButtonM}" Height="30" Click="LoginBtn_Click"/>
-            <Button Content="Cancel" HorizontalAlignment="Left" Margin="364,215,0,0" VerticalAlignment="Top" Width="75" Template="{DynamicResource ResourceKey=ButtonM}" Height="30" Click="HandleBtnBack_Click"/>
+            <PasswordBox Name="passInp" HorizontalAlignment="Left" Height="23" Margin="319,170,0,0" VerticalAlignment="Top" Width="172" />
+            <Button Name="loginBtn" Content="Login" HorizontalAlignment="Left" Margin="284,215,0,0" VerticalAlignment="Top" Width="76" Template="{DynamicResource ButtonM}" Height="30" Click="LoginBtn_Click"/>
+            <Button Content="Cancel" HorizontalAlignment="Left" Margin="393,215,0,0" VerticalAlignment="Top" Width="75" Template="{DynamicResource ResourceKey=ButtonM}" Height="30" Click="HandleBtnBack_Click"/>
 
         </Grid>
 

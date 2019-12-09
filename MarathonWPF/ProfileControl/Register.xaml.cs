@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using Microsoft.Win32;
+using System;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -10,11 +12,35 @@ namespace MarathonWPF
     /// </summary>
     public partial class Register : Window
     {
-        private bool passRight;
+        private bool passRight = false;
 
         public Register()
         {
             InitializeComponent();
+
+            this.Loaded += Register_Loaded;
+        }
+
+        private void Register_Loaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var genders = new g463_runnersDataSetTableAdapters.GenderTableAdapter().GetData();
+                genderInp.ItemsSource = genders;
+                genderInp.DisplayMemberPath = "Gender";
+                genderInp.SelectedValuePath = "Gender";
+                genderInp.SelectedIndex = 0;
+
+                var countries = new g463_runnersDataSetTableAdapters.CountryTableAdapter().GetData();
+                countryInp.ItemsSource = countries;
+                countryInp.DisplayMemberPath = "CountryName";
+                countryInp.SelectedValuePath = "CountryCode";
+                countryInp.SelectedIndex = 0;
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
         }
 
         private void HandleBtnBack_Click(object sender, RoutedEventArgs e)
@@ -48,9 +74,24 @@ namespace MarathonWPF
             }
         }
 
-        private void ViewImg_Click(object sender, RoutedEventArgs e)
+        private void ViewImg_Click(object sender, RoutedEventArgs rea)
         {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.FileOk += Ofd_FileOk;
+            ofd.ShowDialog();
+            ofd.Multiselect = false;
 
+            void Ofd_FileOk(object s, System.ComponentModel.CancelEventArgs cea)
+            {
+                pathToImgInp.Text = ofd.FileName;
+
+                try
+                {
+                    byte[] ava = File.ReadAllBytes(ofd.FileName);
+                    avatarPreview.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(ava);
+                }
+                catch { }
+            }
         }
 
         private void RegisterBtn_Click(object sender, RoutedEventArgs e)
@@ -58,15 +99,40 @@ namespace MarathonWPF
             string email = emailInp.Text;
             string firstName = firstNameInp.Text;
             string lastName = lastNameInp.Text;
-            string gender = genderInp.Text;
+            string gender = genderInp.SelectedValue.ToString();
             string pathImg = pathToImgInp.Text;
-            ImageSource ava = (ImageSource)new ImageSourceConverter().ConvertFrom(File.ReadAllBytes(pathImg));
-            string date = dateInp.SelectedDate.ToString();
-            string country = countryInp.Text;
+            DateTime? date = dateInp.SelectedDate;
+            string country = countryInp.SelectedValue.ToString();
             string pass = passInp.Password;
-            if(passRight)
+
+            byte[] ava = null;
+            if (pathToImgInp.Text.Length != 0)
             {
-                new g463_runnersDataSetTableAdapters.
+                try
+                {
+                    ava = File.ReadAllBytes(pathImg);
+                }
+                catch { }
+            }
+
+            if (passRight)
+            {
+                try
+                {
+                    new g463_runnersDataSetTableAdapters.UserTableAdapter().InsertQuery(email, pass, firstName, lastName, "R", ava);
+                    new g463_runnersDataSetTableAdapters.RunnerTableAdapter().InsertQuery(email, gender, date, country);
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message, "Произошла ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+                MessageBox.Show("Готово!");
+                Hide();
+                new MenuRunner().Show();
+                UserData.userEmail = email;
+                UserData.userRole = "R";
+                Close();
             }
         }
 
@@ -75,6 +141,12 @@ namespace MarathonWPF
             if(passInp.Password != passRInp.Password)
             {
                 passRInp.BorderBrush = new SolidColorBrush(Colors.Red);
+                passRight = false;
+            }
+            else
+            {
+                passRInp.BorderBrush = new SolidColorBrush(Colors.Gray);
+                passRight = true;
             }
         }
     }

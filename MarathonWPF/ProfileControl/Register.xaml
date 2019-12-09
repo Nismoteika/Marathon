@@ -35,12 +35,12 @@
             <PasswordBox Name="passRInp" HorizontalAlignment="Left" Height="23" Margin="264,197,0,0" VerticalAlignment="Top" Width="120" PasswordChanged="PassRInp_PasswordChanged"/> 
             <TextBox Name="firstNameInp" HorizontalAlignment="Left" Height="23" Margin="264,227,0,0" TextWrapping="Wrap" Text="Имя" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalAlignment="Top" Width="120"/>
             <TextBox Name="lastNameInp" HorizontalAlignment="Left" Height="23" Margin="264,259,0,0" TextWrapping="Wrap" Text="Фамилия" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalAlignment="Top" Width="120"/>
-            <TextBox Name="genderInp" HorizontalAlignment="Left" Height="23" Margin="264,290,0,0" TextWrapping="Wrap" Text="Пол" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalAlignment="Top" Width="120"/>
-            <TextBox Name="pathToImgInp" HorizontalAlignment="Left" Height="23" Margin="521,255,0,0" TextWrapping="Wrap" Text="путь до фотографии" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalAlignment="Top" Width="120"/>
+            <ComboBox Name="genderInp" HorizontalAlignment="Left" Height="23" Margin="264,290,0,0" VerticalAlignment="Top" Width="120"/>
+            <TextBox Name="pathToImgInp" HorizontalAlignment="Left" Height="23" Margin="521,255,0,0" TextWrapping="Wrap" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalAlignment="Top" Width="120"/>
             <DatePicker Name="dateInp" HorizontalAlignment="Left" Margin="635,285,0,0" VerticalAlignment="Top"/>
-            <TextBox Name="countryInp" HorizontalAlignment="Left" Height="23" Margin="635,318,0,0" TextWrapping="Wrap" Text="Страна" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalAlignment="Top" Width="120"/>
+            <ComboBox Name="countryInp" HorizontalAlignment="Left" Height="23" Margin="635,318,0,0" VerticalAlignment="Top" Width="120"/>
             <Button Name="viewImg" Content="Просмотр" HorizontalAlignment="Left" Margin="660,255,0,0" VerticalAlignment="Top" Width="95" Template="{DynamicResource ButtonM}" Height="23" Click="ViewImg_Click"/>
-            <Image HorizontalAlignment="Left" Height="100" Margin="660,131,0,0" VerticalAlignment="Top" Width="95" OpacityMask="Gray"/>
+            <Image Name="avatarPreview" HorizontalAlignment="Left" Height="100" Margin="660,131,0,0" VerticalAlignment="Top" Width="95" OpacityMask="Gray"/>
             <Button Name="registerBtn" Content="Регистрация" HorizontalAlignment="Left" Margin="287,362,0,0" VerticalAlignment="Top" Width="95" Template="{DynamicResource ResourceKey=ButtonM}" Height="23" Click="RegisterBtn_Click"/>
             <Button Name="cancelBtn" Content="Отмена" HorizontalAlignment="Left" Margin="399,362,0,0" VerticalAlignment="Top" Width="95" Template="{DynamicResource ResourceKey=ButtonM}" Height="23" Click="HandleBtnBack_Click"/>
         </Grid>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MarathonWPF"
         mc:Ignorable="d"
-        Title="RegisterOnMarathon" Height="600" Width="800">
+        Title="RegisterOnMarathon" Height="600" Width="900">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />
@@ -17,36 +17,36 @@
             <ColumnDefinition Width="auto"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="792" Background="Gray">
+        <Grid Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="871" Background="Gray" Margin="21,0,-58,0">
             <Button Name="handleBtnBack" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Height="40" FontSize="20" Template="{DynamicResource ButtonM}" Margin="20,10,0,0" Click="HandleBtnBack_Click" />
             <Label Content="MARATHON SKILLS 2019" HorizontalAlignment="Center" Height="40" FontSize="20" Margin="136,10,406,10" Foreground="White" FontWeight="Bold" Width="250" VerticalAlignment="Center"/>
             <Button Name="handleBtnLogout" Content="Logout" HorizontalAlignment="Right" VerticalAlignment="Top" Width="105" Height="40" FontSize="20" Template="{DynamicResource ButtonM}" Margin="0,10,21,0" />
         </Grid>
 
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Margin="0,0,-29,0">
             <TextBlock HorizontalAlignment="Center" Height="40" FontSize="24" Margin="259,17,257,402" >Регистрация на марафон</TextBlock>
             <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" FontSize="20" Margin="79,57,83,368" Width="630">заполните всю информацию</TextBlock>
             <Label Content="Вид марафона" HorizontalAlignment="Left" Margin="104,126,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="LightGray" FontSize="22"/>
-            <Label Content="Варианты комплектов" HorizontalAlignment="Left" Margin="438,126,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="LightGray" FontSize="22"/>
+            <Label Content="Варианты комплектов" HorizontalAlignment="Left" Margin="377,136,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="LightGray" FontSize="22"/>
             <Label Content="Детали спонсорства" HorizontalAlignment="Left" Margin="79,272,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="LightGray" FontSize="22"/>
-            <Label Content="Регистрационный взнос" HorizontalAlignment="Left" Margin="438,301,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="LightGray" FontSize="22"/>
-            <CheckBox Content="42km Полный марафон($145)" HorizontalAlignment="Left" Margin="53,171,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="22"/>
-            <CheckBox Content="21km Полумарафон($75)" HorizontalAlignment="Left" Margin="53,204,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="22"/>
-            <CheckBox Content="5km малая дистанция($20)" HorizontalAlignment="Left" Margin="53,240,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="22"/>
-            <RadioButton Content="Вариант A" HorizontalAlignment="Left" Margin="460,171,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="22"/>
-            <RadioButton Content="Вариант B" HorizontalAlignment="Left" Margin="459,204,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="22"/>
-            <RadioButton Content="Вариант C" HorizontalAlignment="Left" Margin="459,240,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="22"/>
-            <Label Content="$185" HorizontalAlignment="Left" Margin="518,347,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="40"/>
+            <Label Content="Регистрационный взнос" HorizontalAlignment="Left" Margin="503,303,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="LightGray" FontSize="22"/>
+            <CheckBox Content="42km Полный марафон($145)" HorizontalAlignment="Left" Margin="53,171,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="22" Checked="CheckBox_Checked" Tag="145" Name="CB0" />
+            <CheckBox Content="21km Полумарафон($75)" HorizontalAlignment="Left" Margin="53,204,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="22" Checked="CheckBox_Checked" Tag="75" Name="CB1"/>
+            <CheckBox Content="5km малая дистанция($20)" HorizontalAlignment="Left" Margin="53,240,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="22" Checked="CheckBox_Checked" Tag="20" Name="CB2"/>
+            <RadioButton Checked="RB_Checked" Content="Вариант A ($0): Номер бегуна+ RFID браслет." HorizontalAlignment="Left" Margin="399,181,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="16" Name="RB0" GroupName="Variants" IsChecked="True" Tag="0"/>
+            <RadioButton Checked="RB_Checked" Content="Вариант B ($20): вариант A + бейсболка + бутылка воды." HorizontalAlignment="Left" Margin="398,214,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="16" Name="RB1" GroupName="Variants" Tag="20"/>
+            <RadioButton Checked="RB_Checked" Content="Вариант C ($45): Вариант B +футболка + сувенирный буклет." HorizontalAlignment="Left" Margin="398,250,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="16" Name="RB2" GroupName="Variants" Tag="45"/>
+            <Label Content="$185" HorizontalAlignment="Left" Margin="587,347,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="40" Name="SumLabel"/>
             <Label Content="Взнос:" HorizontalAlignment="Left" Margin="147,316,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="18"/>
             <Label Content="Сумма взноса:" HorizontalAlignment="Left" Margin="79,361,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="18"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="221,371,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-            <ComboBox HorizontalAlignment="Left" Margin="221,324,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.508,0.122"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="221,371,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <ComboBox HorizontalAlignment="Left" Margin="221,324,0,0" VerticalAlignment="Top" Width="120" Name="foundComboBox"/>
             <Button Content="Регистрация" HorizontalAlignment="Left" Margin="64,414,0,0" VerticalAlignment="Top" Width="95" Template="{DynamicResource ResourceKey=ButtonM}" Height="23"/>
             <Button Content="Отмена" Click="HandleBtnBack_Click" HorizontalAlignment="Left" Margin="177,414,0,0" VerticalAlignment="Top" Width="95" Template="{DynamicResource ResourceKey=ButtonM}" Height="23"/>
         </Grid>
 
-        <Grid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2">
-            <Rectangle Fill="Gray" Height="100"/>
+        <Grid Grid.Column="0" Grid.Row="2" Margin="0,5,-29,0">
+            <Rectangle Fill="Gray" Height="100" Margin="0,0,-27,-55" HorizontalAlignment="Left" Width="891"/>
             <Label Name="ReverseTimer" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
         </Grid>
     </Grid>
