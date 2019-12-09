@@ -9,7 +9,6 @@ namespace MarathonWPF
     /// </summary>
     public partial class Fond : UserControl
     {
-
         public Fond(string nameFond, string descFond, string image)
         {
             InitializeComponent();
@@ -17,19 +16,17 @@ namespace MarathonWPF
             string path = @"..\..\res\";
 
             this.nameFond.Text = nameFond;
+
             if (descFond.Length > 200)
-                this.descFond.Text = descFond.Substring(0, 200) + "...";
+                this.descFond.Text = descFond.Substring(0, 197) + "...";
             else
                 this.descFond.Text = descFond;
+
             try
             {
-                this.imgFond.Source = (ImageSource) new ImageSourceConverter().ConvertFrom(File.ReadAllBytes(path + image));
-            } catch
-            {
-                
+                this.imgFond.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(File.ReadAllBytes(path + image));
             }
+            catch { }
         }
-
-
     }
 }

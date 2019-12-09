@@ -28,5 +28,11 @@ namespace MarathonWPF
         {
             Close();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            new RegisterOnMarathon().Show();
+            this.Close();
+        }
     }
 }

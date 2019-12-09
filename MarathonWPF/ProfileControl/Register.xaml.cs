@@ -130,6 +130,8 @@ namespace MarathonWPF
                 MessageBox.Show("Готово!");
                 Hide();
                 new MenuRunner().Show();
+                UserData.userEmail = email;
+                UserData.userRole = "R";
                 Close();
             }
         }

@@ -21,7 +21,7 @@
 
         <Grid Grid.Row="1">
             <Label Content="Меню бегуна" HorizontalAlignment="Left" Margin="313,34,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="24"/>
-            <Button Content="Регистрация на марафон" HorizontalAlignment="Center" VerticalAlignment="Center" Width="370" Height="92" FontSize="24" Template="{DynamicResource ButtonM}" Margin="20,83,402,284"/>
+            <Button Content="Регистрация на марафон" HorizontalAlignment="Center" VerticalAlignment="Center" Width="370" Height="92" FontSize="24" Template="{DynamicResource ButtonM}" Margin="20,83,402,284" Click="Button_Click"/>
             <Button Content="Мои результаты" HorizontalAlignment="Center" VerticalAlignment="Center" Width="370" Height="92" FontSize="24" Template="{DynamicResource ButtonM}" Margin="396,83,26,284"/>
             <Button Content="Редактирование профиля" HorizontalAlignment="Center" VerticalAlignment="Center" Width="370" Height="92" FontSize="24" Template="{DynamicResource ButtonM}" Margin="20,194,402,173"/>
             <Button Content="Мой спонсор" HorizontalAlignment="Center" VerticalAlignment="Center" Width="370" Height="92" FontSize="24" Template="{DynamicResource ButtonM}" Margin="396,194,26,173"/>

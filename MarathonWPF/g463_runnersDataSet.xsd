@@ -66,7 +66,16 @@ SELECT CharityId, CharityName, CharityDescription, CharityLogo FROM Charity WHER
               <Mapping SourceColumn="CharityDescription" DataSetColumn="CharityDescription" />
               <Mapping SourceColumn="CharityLogo" DataSetColumn="CharityLogo" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="g463_runnersConnectionString (Settings)" DbObjectName="g463_runners.dbo.Charity" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataWithoutLogo" GetMethodModifier="Public" GetMethodName="GetDataWithoutLogo" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataWithoutLogo" UserSourceName="GetDataWithoutLogo">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT CharityId, CharityName, CharityDescription FROM dbo.Charity</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CountryTableAdapter" GeneratorDataComponentClassName="CountryTableAdapter" Name="Country" UserDataComponentName="CountryTableAdapter">
             <MainSource>
@@ -1188,7 +1197,7 @@ SELECT VolunteerId, FirstName, LastName, CountryCode, Gender FROM Volunteer WHER
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="User1TableAdapter" GeneratorDataComponentClassName="User1TableAdapter" Name="User1" UserDataComponentName="User1TableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="g463_runnersConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="g463_runnersConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        [User].Email, [User].FirstName + N' ' + [User].LastName + ' ' + REPLACE(STR(Runner.RunnerId), '  ', '') + N' (' + Runner.CountryCode + ')' AS FN, Runner.RunnerId

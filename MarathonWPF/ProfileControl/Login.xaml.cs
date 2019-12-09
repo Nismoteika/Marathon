@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -72,11 +73,11 @@ namespace MarathonWPF
                         Close();
                         break;
                     default:
-                        MessageBox.Show("unknown role");
+                        MessageBox.Show("Неизвестная роль!");
                         break;
                 }
             }
-            catch { MessageBox.Show("Error"); }
+            catch (Exception Ex) { MessageBox.Show(Ex.Message, "Произошла ошибка!", MessageBoxButton.OK, MessageBoxImage.Error); }
             
         }
     }
