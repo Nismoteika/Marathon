@@ -33,14 +33,14 @@
             <CheckBox Content="42km Полный марафон($145)" HorizontalAlignment="Left" Margin="53,171,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="22"/>
             <CheckBox Content="21km Полумарафон($75)" HorizontalAlignment="Left" Margin="53,204,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="22"/>
             <CheckBox Content="5km малая дистанция($20)" HorizontalAlignment="Left" Margin="53,240,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="22"/>
-            <RadioButton Content="Вариант A" HorizontalAlignment="Left" Margin="460,171,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="22"/>
-            <RadioButton Content="Вариант B" HorizontalAlignment="Left" Margin="459,204,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="22"/>
-            <RadioButton Content="Вариант C" HorizontalAlignment="Left" Margin="459,240,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="22"/>
+            <RadioButton Content="Вариант A" HorizontalAlignment="Left" Margin="460,171,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="22" GroupName="Variants" IsChecked="True"/>
+            <RadioButton Content="Вариант B" HorizontalAlignment="Left" Margin="459,204,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="22" GroupName="Variants" />
+            <RadioButton Content="Вариант C" HorizontalAlignment="Left" Margin="459,240,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="22" GroupName="Variants" />
             <Label Content="$185" HorizontalAlignment="Left" Margin="518,347,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="40"/>
             <Label Content="Взнос:" HorizontalAlignment="Left" Margin="147,316,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="18"/>
             <Label Content="Сумма взноса:" HorizontalAlignment="Left" Margin="79,361,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="18"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="221,371,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-            <ComboBox HorizontalAlignment="Left" Margin="221,324,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.508,0.122"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="221,371,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <ComboBox HorizontalAlignment="Left" Margin="221,324,0,0" VerticalAlignment="Top" Width="120"/>
             <Button Content="Регистрация" HorizontalAlignment="Left" Margin="64,414,0,0" VerticalAlignment="Top" Width="95" Template="{DynamicResource ResourceKey=ButtonM}" Height="23"/>
             <Button Content="Отмена" Click="HandleBtnBack_Click" HorizontalAlignment="Left" Margin="177,414,0,0" VerticalAlignment="Top" Width="95" Template="{DynamicResource ResourceKey=ButtonM}" Height="23"/>
         </Grid>

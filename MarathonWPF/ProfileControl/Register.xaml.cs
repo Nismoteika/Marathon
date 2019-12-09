@@ -12,7 +12,7 @@ namespace MarathonWPF
     /// </summary>
     public partial class Register : Window
     {
-        private bool passRight;
+        private bool passRight = false;
 
         public Register()
         {
@@ -84,6 +84,13 @@ namespace MarathonWPF
             void Ofd_FileOk(object s, System.ComponentModel.CancelEventArgs cea)
             {
                 pathToImgInp.Text = ofd.FileName;
+
+                try
+                {
+                    byte[] ava = File.ReadAllBytes(ofd.FileName);
+                    avatarPreview.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(ava);
+                }
+                catch { }
             }
         }
 
@@ -94,13 +101,36 @@ namespace MarathonWPF
             string lastName = lastNameInp.Text;
             string gender = genderInp.SelectedValue.ToString();
             string pathImg = pathToImgInp.Text;
-            ImageSource ava = (ImageSource)new ImageSourceConverter().ConvertFrom(File.ReadAllBytes(pathImg));
-            string date = dateInp.SelectedDate.ToString();
+            DateTime? date = dateInp.SelectedDate;
             string country = countryInp.SelectedValue.ToString();
             string pass = passInp.Password;
-            if(passRight)
+
+            byte[] ava = null;
+            if (pathToImgInp.Text.Length != 0)
             {
-                //new g463_runnersDataSetTableAdapters.
+                try
+                {
+                    ava = File.ReadAllBytes(pathImg);
+                }
+                catch { }
+            }
+
+            if (passRight)
+            {
+                try
+                {
+                    new g463_runnersDataSetTableAdapters.UserTableAdapter().InsertQuery(email, pass, firstName, lastName, "R", ava);
+                    new g463_runnersDataSetTableAdapters.RunnerTableAdapter().InsertQuery(email, gender, date, country);
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message, "Произошла ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+                MessageBox.Show("Готово!");
+                Hide();
+                new MenuRunner().Show();
+                Close();
             }
         }
 
@@ -109,10 +139,12 @@ namespace MarathonWPF
             if(passInp.Password != passRInp.Password)
             {
                 passRInp.BorderBrush = new SolidColorBrush(Colors.Red);
+                passRight = false;
             }
             else
             {
                 passRInp.BorderBrush = new SolidColorBrush(Colors.Gray);
+                passRight = true;
             }
         }
     }
