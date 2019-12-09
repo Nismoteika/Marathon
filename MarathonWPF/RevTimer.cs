@@ -13,7 +13,7 @@ namespace MarathonWPF
         private void updateDate()
         {
             DateTime dateNow = DateTime.Now;
-            DateTime dateM = new DateTime(2019, 10, 21);
+            DateTime dateM = new DateTime(2020, 04, 01);
             TimeSpan revDate = dateM.Subtract(dateNow);
             label.Content = revDate.Days + " дней " + revDate.Hours + " часов и " + revDate.Minutes + " минут до старта марафона!";
         }
