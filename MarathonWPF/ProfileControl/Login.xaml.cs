@@ -56,7 +56,6 @@ namespace MarathonWPF
 
                 UserData.userEmail = email;
                 UserData.userRole = user.RoleId;
-                //UserData.userTel = user.
 
                 switch (UserData.userRole)
                 {
@@ -69,7 +68,8 @@ namespace MarathonWPF
                         Close();
                         break;
                     case "R":
-                        new MenuRunner().Show();
+                        var Runner = new g463_runnersDataSetTableAdapters.RunnerTableAdapter().GetUserByEmail(email).ElementAt(0);
+                        new MenuRunner(Runner.RunnerId).Show();
                         Close();
                         break;
                     default:

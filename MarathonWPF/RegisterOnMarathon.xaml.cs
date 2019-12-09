@@ -36,10 +36,10 @@ namespace MarathonWPF
 
         private void RegisterOnMarathon_Loaded(object sender, RoutedEventArgs e)
         {
-            var sponsors = new g463_runnersDataSetTableAdapters.SponsorshipTableAdapter().GetData();
-            charityCombo.ItemsSource = sponsors;
-            charityCombo.DisplayMemberPath = "SponsorName";
-            charityCombo.SelectedValuePath = "SponsorshipId";
+            var charitys = new g463_runnersDataSetTableAdapters.CharityTableAdapter().GetData();
+            charityCombo.ItemsSource = charitys;
+            charityCombo.DisplayMemberPath = "CharityName";
+            charityCombo.SelectedValuePath = "CharityId";
         }
 
         private void updateSummary(object sender, RoutedEventArgs e)
@@ -79,7 +79,7 @@ namespace MarathonWPF
         {
             if (marCat1S > 0 || marCat2S > 0 || marCat3S > 0)
             {
-                //TODO
+                new g463_runnersDataSetTableAdapters.RegistrationTableAdapter().InsertQuery()
             }
         }
 
