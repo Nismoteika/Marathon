@@ -56,6 +56,7 @@ namespace MarathonWPF
 
                 UserData.userEmail = email;
                 UserData.userRole = user.RoleId;
+                //UserData.userTel = user.
 
                 switch (UserData.userRole)
                 {

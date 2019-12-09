@@ -63,6 +63,9 @@
     <Compile Include="Menus\MenuDetails.xaml.cs">
       <DependentUpon>MenuDetails.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modals\ModalContact.xaml.cs">
+      <DependentUpon>ModalContact.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ProfileControl\EditProfile.xaml.cs">
       <DependentUpon>EditProfile.xaml</DependentUpon>
     </Compile>
@@ -124,6 +127,10 @@
     <Compile Include="Thanks\ThanksSponsorSupport.xaml.cs">
       <DependentUpon>ThanksSponsorSupport.xaml</DependentUpon>
     </Compile>
+    <Page Include="Modals\ModalContact.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ProfileControl\AuthWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

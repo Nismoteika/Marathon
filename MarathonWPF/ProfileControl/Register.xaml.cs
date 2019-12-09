@@ -11,11 +11,25 @@ namespace MarathonWPF
     /// </summary>
     public partial class Register : Window
     {
-        private bool passRight;
+        private bool passRight = false;
 
         public Register()
         {
             InitializeComponent();
+            this.Loaded += Register_Loaded;
+        }
+
+        private void Register_Loaded(object sender, RoutedEventArgs e)
+        {
+            var genderData = new g463_runnersDataSetTableAdapters.GenderTableAdapter().GetData();
+            genderCombo.ItemsSource = genderData;
+            genderCombo.DisplayMemberPath = "Gender";
+            genderCombo.SelectedValuePath = "Gender";
+
+            var countryData = new g463_runnersDataSetTableAdapters.CountryTableAdapter().GetData();
+            countryCombo.ItemsSource = countryData;
+            countryCombo.DisplayMemberPath = "CountryName";
+            countryCombo.SelectedValuePath = "CountryCode";
         }
 
         private void HandleBtnBack_Click(object sender, RoutedEventArgs e)
@@ -51,7 +65,7 @@ namespace MarathonWPF
 
         private void ViewImg_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void RegisterBtn_Click(object sender, RoutedEventArgs e)
@@ -59,17 +73,33 @@ namespace MarathonWPF
             string email = emailInp.Text;
             string firstName = firstNameInp.Text;
             string lastName = lastNameInp.Text;
-            string gender = genderInp.Text;
+            //gender
             string pathImg = pathToImgInp.Text;
             byte[] ava = File.ReadAllBytes(pathImg);
             DateTime? date = dateInp.SelectedDate;
-            string country = countryInp.Text;
+            //string country = countryInp.Text;
             string pass = passInp.Password;
             if(passRight && date != null)
             {
-                new g463_runnersDataSetTableAdapters.UserTableAdapter().Insert(email, pass, firstName, lastName, "R");
-                new g463_runnersDataSetTableAdapters.RunnerTableAdapter().Insert(email, gender, date, country);
+                int ans1 = new g463_runnersDataSetTableAdapters.UserTableAdapter().Insert(email, pass, firstName, lastName, "R", ava);
+                int ans2 = new g463_runnersDataSetTableAdapters.RunnerTableAdapter().Insert(email, genderCombo.SelectedItem.ToString(), date, countryCombo.SelectedItem.ToString());
+                if(ans1 == 1)
+                {
+                    if(ans2 == 1)
+                    {
+                        MessageBox.Show("Success runner inserted");
+                    } else
+                    {
+                        Console.WriteLine("can't insert runner");
+                    }
+
+                } else
+                {
+                    Console.WriteLine("can't insert user");
+                }
+
             }
+
         }
 
         private void PassRInp_PasswordChanged(object sender, RoutedEventArgs e)
@@ -77,6 +107,11 @@ namespace MarathonWPF
             if(passInp.Password != passRInp.Password)
             {
                 passRInp.BorderBrush = new SolidColorBrush(Colors.Red);
+                passRight = false;
+            } else
+            {
+                passRInp.BorderBrush = new SolidColorBrush(Colors.Green);
+                passRight = true;
             }
         }
     }

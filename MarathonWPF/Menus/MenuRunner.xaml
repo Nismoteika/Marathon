@@ -21,11 +21,11 @@
 
         <Grid Grid.Row="1">
             <Label Content="Меню бегуна" HorizontalAlignment="Left" Margin="313,34,0,0" VerticalAlignment="Top" Foreground="Gray" FontSize="24"/>
-            <Button Content="Регистрация на марафон" HorizontalAlignment="Center" VerticalAlignment="Center" Width="370" Height="92" FontSize="24" Template="{DynamicResource ButtonM}" Margin="20,83,402,284"/>
-            <Button Content="Мои результаты" HorizontalAlignment="Center" VerticalAlignment="Center" Width="370" Height="92" FontSize="24" Template="{DynamicResource ButtonM}" Margin="396,83,26,284"/>
-            <Button Content="Редактирование профиля" HorizontalAlignment="Center" VerticalAlignment="Center" Width="370" Height="92" FontSize="24" Template="{DynamicResource ButtonM}" Margin="20,194,402,173"/>
-            <Button Content="Мой спонсор" HorizontalAlignment="Center" VerticalAlignment="Center" Width="370" Height="92" FontSize="24" Template="{DynamicResource ButtonM}" Margin="396,194,26,173"/>
-            <Button Content="Контакты" HorizontalAlignment="Center" VerticalAlignment="Center" Width="370" Height="92" FontSize="24" Template="{DynamicResource ButtonM}" Margin="20,308,402,59"/>
+            <Button Name="regOnMarathon" Content="Регистрация на марафон" HorizontalAlignment="Center" VerticalAlignment="Center" Width="360" Height="82" FontSize="24" Template="{DynamicResource ButtonM}" Margin="20,83,402,284" Click="RegOnMarathon_Click"/>
+            <Button Content="Мои результаты" HorizontalAlignment="Center" VerticalAlignment="Center" Width="360" Height="82" FontSize="24" Template="{DynamicResource ButtonM}" Margin="396,83,26,284"/>
+            <Button Content="Редактирование профиля" HorizontalAlignment="Center" VerticalAlignment="Center" Width="360" Height="82" FontSize="24" Template="{DynamicResource ButtonM}" Margin="20,194,402,173"/>
+            <Button Content="Мой спонсор" HorizontalAlignment="Center" VerticalAlignment="Center" Width="360" Height="82" FontSize="24" Template="{DynamicResource ButtonM}" Margin="396,194,26,173"/>
+            <Button Name="ContactModal" Content="Контакты" HorizontalAlignment="Center" VerticalAlignment="Center" Width="360" Height="82" FontSize="24" Template="{DynamicResource ButtonM}" Margin="20,308,402,59" Click="ContactModal_Click"/>
         </Grid>
 
         <Grid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2">

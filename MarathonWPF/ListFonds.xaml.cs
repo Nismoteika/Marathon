@@ -19,7 +19,7 @@ namespace MarathonWPF
             g463_runnersDataSet.CharityDataTable data = new g463_runnersDataSetTableAdapters.CharityTableAdapter().GetData();
             for(int i = 0; i < data.Count; i++)
             {
-                g463_runnersDataSet.CharityRow element = data[i];
+                var element = data[i];
                 Fond fond = new Fond(element.CharityName, element.CharityDescription, element.CharityLogo);
                 stackFonds.Children.Add(fond);
             }

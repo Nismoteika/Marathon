@@ -10,5 +10,6 @@ namespace MarathonWPF
     {
         public static string userEmail = "";
         public static string userRole = "";
+        public static string userTel = "";
     }
 }

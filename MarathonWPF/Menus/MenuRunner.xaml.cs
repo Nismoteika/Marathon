@@ -19,6 +19,7 @@ namespace MarathonWPF
     /// </summary>
     public partial class MenuRunner : Window
     {
+
         public MenuRunner()
         {
             InitializeComponent();
@@ -26,6 +27,18 @@ namespace MarathonWPF
 
         private void HandleBtnBack_Click(object sender, RoutedEventArgs e)
         {
+            new MainWindow().Show();
+            Close();
+        }
+
+        private void ContactModal_Click(object sender, RoutedEventArgs e)
+        {
+            new Modals.ModalContact().ShowDialog();
+        }
+
+        private void RegOnMarathon_Click(object sender, RoutedEventArgs e)
+        {
+            new RegisterOnMarathon().Show();
             Close();
         }
     }
